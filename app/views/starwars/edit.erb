@@ -1,0 +1,10 @@
+<h1>Insert the form to edit an instance of your model here.</h1>
+
+<h2>Edit your Mad Lib story</h2>
+
+<form method="POST" action="/starwars/<%=starwar.id%>">
+    <input type="hidden" name="_method" value="PATCH">
+    Story Title: <input type="text" name ="title"><br><br>
+
+    <input type="submit" value="Create Madlib">
+</form>

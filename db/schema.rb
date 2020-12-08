@@ -13,18 +13,36 @@
 
 ActiveRecord::Schema.define(version: 20201208025333) do
 
-  create_table "stories", force: :cascade do |t|
-    t.string   "adjective"
-    t.string   "location"
-    t.string   "noun"
-    t.string   "number"
-    t.string   "person"
-    t.string   "quote"
-    t.string   "title"
-    t.string   "verb"
+  create_table "starwars", force: :cascade do |t|
+    t.string   "adjective_1"
+    t.string   "adjective_2"
+    t.string   "adjective_3"
+    t.string   "adjective_4"
+    t.string   "animal_1"
+    t.string   "character_1"
+    t.string   "character_2"
+    t.string   "character_3"
+    t.string   "name_1"
+    t.string   "name_2"
+    t.string   "noun_1"
+    t.string   "noun_2"
+    t.string   "noun_3"
+    t.string   "noun_4"
+    t.string   "number_1"
+    t.string   "planet_1"
+    t.string   "quote_1"
+    t.string   "specie_1"
+    t.string   "specie_2"
+    t.string   "specie_3"
+    t.string   "vehicle_1"
+    t.string   "vehicle_2"
+    t.string   "vehicle_3"
+    t.string   "verb_1"
+    t.string   "verb_3"
+    t.string   "verb_4"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -22,16 +22,19 @@ class UsersController < ApplicationController
 
   # GET: /users/5/edit
   get "/users/:id/edit" do
+    # @story = Story.find(params["id"]) - this line of code should be in every route that has :id
     erb :"/users/edit.html"
   end
 
-  # PATCH: /users/5
+  # PATCH: /users/5 - update one movie based on the edit form
   patch "/users/:id" do
+        # @story = Story.find(params["id"]) - this line of code should be in every route that has :id
     redirect "/users/:id"
   end
 
-  # DELETE: /users/5/delete
+  # DELETE: /users/5/delete - destory one item in particular
   delete "/users/:id/delete" do
+        # @story = Story.find(params["id"]) - this line of code should be in every route that has :id
     redirect "/users"
   end
 end

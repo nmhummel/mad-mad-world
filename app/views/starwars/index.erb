@@ -1,0 +1,7 @@
+<h1>This is the Model's index page.</h1>
+<h2>My stories</h2>
+<br>
+
+<% @starwars.each do |s| %>
+    <a href="/starwars/<%=m.id%>"><%= s.title %></a><br><br>
+<% end<%>
