@@ -21,11 +21,12 @@ class CreateStarwars < ActiveRecord::Migration
       t.string :specie_1
       t.string :specie_2
       t.string :specie_3
+      t.string :title
       t.string :vehicle_1
       t.string :vehicle_2
       t.string :vehicle_3
       t.string :verb_1
-      t.string :verb_3
+      t.string :verb_2
       t.string :verb_3
       t.string :verb_4
       t.integer :user_id

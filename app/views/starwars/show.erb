@@ -1,43 +1,54 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<!-- This is the show page for an individual instance of your model.-->
+<h1>A Better Star Wars Holiday Special</h1>
 
-A Better Star Wars Holiday Special
+<h2>Title: "<%=@starwar.title%>"</h2>
+<h3><i>Your Story #<%=@starwar.id%></i></h3>
 
-'Twas the night before Christmas, when all through PLANET,
-Not a SPECIE1 was stirring, not even a Wookie.
-The lightsabers were VERB1 by the NOUN1 with care,
-In hopes that St. Yoda soon would be there.
+<p>'Twas the night before Christmas, when all through <%=@starwar.planet_1%>,<br>
+Not a creature was stirring, not even a <%=@starwar.specie_1%>.<br>
+The lightsabers were <%=@starwar.verb_1%> by the <%=@starwar.noun_1%> with care,<br>
+In hopes that St. Yoda soon would be there.</p>
 
-The SPECIE2 were nestled all snug in their beds,
-While visions of a Ewoks danced in their heads.
-And Han Solo in his Falcon, and I in my VEHICLE1,
-Had just VERB2 our brains for a long winter's NOUN2.
+<p>The <%=@starwar.specie_2%> were nestled all snug in their beds,<br>
+While visions of a Ewoks danced in their heads.<br>
+And Han Solo in his Falcon, and I in my <%=@starwar.vehicle_1%>,<br>
+Had just <%=@starwar.verb_2%> our brains for a long winter's <%=@starwar.noun_2%>.</p>
 
-When out in the swamp there arose such a clatter,
-I VERB3 from my bunk to see what was the matter.
-When what to my ADJECTIVE1 eyes did appear,
-But a miniature VEHICLE2 and NUMBER1 tiny SPECIE3!
+<p>When out in the swamp there arose such a clatter,<br>
+I <%=@starwar.verb_3%> from my bunk to see what was the matter.<br>
+When what to my <%=@starwar.adjective_1%> eyes did appear,<br>
+But a miniature <%=@starwar.vehicle_2%> and <%=@starwar.number_1%> tiny <%=@starwar.specie_3%>!</p>
 
-With a little green driver so grumpy and old,
-I knew in a moment he was Yoda, as told.
-More rapid than ANIMAL1 his coursers they came,
-And he whistled, and shouted, and called them by name:
+<p>With a little green driver so grumpy and old,<br>
+I knew in a moment he was Yoda, as told.<br>
+More rapid than <%=@starwar.animal_1%> his coursers they came,<br>
+And he whistled, and shouted, and called them by name:</p>
 
-"Now, NAME1! now, NAME2! now CHARACTER1 and CHARACTER2!
-On, Chewie! on, Boba! on, Lando and CHARACTER3!"
-As I drew in my NOUN3, and was turning around,
-Down the chimney St. Yoda came with a frown.
+<p>"Now, <%=@starwar.name_1%>! now, <%=@starwar.name_2%>! now <%=@starwar.character_1%> and <%=@starwar.character_2%>!<br>
+On, Chewie! on, Boba! on, Lando and <%=@starwar.character_3%>!"<br>
+As I drew in my <%=@starwar.noun_3%>, and was turning around,<br>
+Down the chimney St. Yoda came with a frown.</p>
 
-His ADJECTIVE2 green ears were sprawled out like wings,
-And the wrinkles in his skin were as ADJECTIVE3 as NOUN4;
-His light saber hung from his belt with great care,
-with a promise of the Force if we're worthy and ADJECTIVE4. 
+<p>His <%=@starwar.adjective_2%> green ears were sprawled out like wings,<br>
+And the wrinkles in his skin were as <%=@starwar.adjective_3%> as <%=@starwar.noun_4%>;<br>
+His light saber hung from his belt with great care,<br>
+with a promise of the Force if we're worthy and <%=@starwar.adjective_4%>. </p>
 
-He spoke not a word as he erased Jar-Jar Binks,
-And slapped Luke for whining, faster than a blink.  
-As he hobbled away with a VERB4 of his ears,
-He gave a nod to the fans as they called out with cheer!
+<p>He spoke not a word as he erased Jar-Jar Binks,<br>
+And slapped Luke for whining, faster than a blink.  <br>
+As he hobbled away with a <%=@starwar.verb_4%> of his ears,<br>
+He gave a nod to the fans as they called out with cheer!</p>
 
-"Thank you, St. Yoda! You're the best Jedi we know!"
-He smiled and returned to his VEHICLE3 to go.
-But I heard him exclaim, as he drove out of sight—
-"A Merry Christmas, you have." and "QUOTE1"
+<p>"Thank you, St. Yoda! You're the best Jedi we know!"<br>
+He smiled and returned to his <%=@starwar.vehicle_3%> to go.<br>
+But I heard him exclaim, as he drove out of sight,<br>
+"A Merry Christmas, you have." and "<%=@starwar.quote_1%>"</p>
+
+<!-- This story has been saved on your user page. Link It A tags submit get requests. delete needs a button to submit-->
+
+<form method="POST" action="/starwars/<%=@starwar.id%>">
+<input type="hidden" name="_method" value ="DELETE">
+<input type="submit" value="Delete <%=@starwar.title%>">
+</form>
+
+<a href="/starwars/<%= @starwar.id %>/edit">Edit Story</a> | <a href="/user/show">Your Saved Stories</a>

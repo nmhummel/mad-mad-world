@@ -1,10 +1,42 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>A Better Star Wars Holiday Special</h1>
 
-<h2>Edit your Mad Lib story</h2>
+<h2>Edit your Mad Lib story: <%=@starwar.title%></h2>
 
-<form method="POST" action="/starwars/<%=starwar.id%>">
+<form method="POST" action="/starwars/<%=@starwar.id%>">
     <input type="hidden" name="_method" value="PATCH">
-    Story Title: <input type="text" name ="title"><br><br>
-
-    <input type="submit" value="Create Madlib">
+<h2>Here's a chance to outdo your previous effort. Don't forget that you can always select "Fake It!"
+and we'll provide a brilliant answer on your behalf.</h2>
+    <input type="text" value="<%=@starwar.planet_1%>" id=planet_1 name="planet_1"><br><br>
+    Planet: <input type="text" name="planet_1"><br><br>
+    Species: <input type="text" name="specie_1"><br><br>
+    Verb: <input type="text" name="verb_1"><br><br>
+    Noun: <input type="text" name="noun_1"><br><br>
+    Species: <input type="text" name="specie_2"><br><br>
+    Type of Vehicle: <input type="text" name="vehicle_1"><br><br>   
+    Verb: <input type="text" name="verb_2"><br><br>
+    Noun: <input type="text" name="noun_2"><br><br>
+    Verb: <input type="text" name="verb_3"><br><br>
+    Adjective: <input type="text" name="adjective_1"><br><br>
+    Type of Vehicle: <input type="text" name="vehicle_2"><br><br> 
+    Number: <input type="text" name="number_1"><br><br>
+    Species: <input type="text"  name="specie_3"><br><br>
+    Animal: <input type="text" name="animal_1"><br><br>
+    Person's Name: <input type="text" name="name_1"><br><br>
+    Person's Name: <input type="text" name="name_2"> <br><br>
+    Character: <input type="text" ame="character_1"><br><br>
+    Character: <input type="text"  name="character_2"><br><br>
+    Character: <input type="text" name="character_3"><br><br>
+    Noun: <input type="text" name="noun_3"><br><br>
+    Adjective: <input type="text" name="adjective_2"><br><br>
+    Adjective: <input type="text" name="adjective_3"><br><br>
+    Noun: <input type="text" name="noun_4"><br><br>
+    Adjective: <input type="text" name="adjective_4"><br><br>
+    Verb: <input type="text" name="verb_4"><br><br>
+    Type of Vehicle: <input type="text"  name="vehicle_3"><br><br>
+    Quote: <input type="text" name="quote_1"><br><br>
+    <input type="submit" value="Recreate the Madness!">
 </form>
+
+
+
+
