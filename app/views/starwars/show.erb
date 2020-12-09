@@ -1,7 +1,7 @@
 <h1>A Better Star Wars Holiday Special</h1>
 
-<h2>Title: "<u><u><%=@starwar.title%></u>"</h2>
-<h3><i>Your Story #<u><u><%=@starwar.id%></u></i></h3>
+<h2>Title: "<u><%=@starwar.title%></u>"</h2>
+<h3><i>Your Story #<u><%=@starwar.id%></u></i></h3>
 
 <p>'Twas the night before Christmas, when all through <u><%=@starwar.planet_1%></u>,<br>
 Not a creature was stirring, not even a <u><%=@starwar.specie_1%></u>.<br>
@@ -45,11 +45,11 @@ But I heard him exclaim, as he drove out of sight,<br>
 
 <!-- This story has been saved on your user page. Link It A tags submit get requests. delete needs a button to submit-->
 
-<% if @movie.user_id == session[:user_id] %>
-    <a href="/starwars/"><%=@starwar.id%>/edit">Edit Story</a><br><br>
+<% if @starwar.user_id == session[:user_id] %>
+    <a href="/starwars/<%=@starwar.id %>/edit">Edit Story</a><br><br>
     <form method="POST" action="/starwars/<u><%=@starwar.id%></u>">
         <input type="hidden" name="_method" value ="DELETE">
-        <input type="submit" value="Delete <u><%=@starwar.title%></u>">
+        <input type="submit" value="Delete <%=@starwar.title%>">
     </form>
 <% end %>
-<br><br><a href="/user/show">Your Saved Stories</a>
+<br><br><a href="/users">Your Saved Stories</a>

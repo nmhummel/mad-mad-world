@@ -16,12 +16,18 @@
 </div>
 <table>
   <tr>
-    <th><h3><a href=Log In to Your Account:</h4></th>
+    <th><h3>Log In to Your Account</h4></th>
     <th><h3>Current Madlib(s):</h3></th>
   </tr>
   <tr>
     <td>
-
+        <form action="/login" method="POST">
+          <h2>
+          <label for="username">Username: </label><input id="username" type="text" name="username"><br>
+          <label for="password">Password: </label><input id="password" type="password" name="password"><br>
+          <input type="submit" value="Log In">
+        </h2>
+      </form>
     </td>
     <td>
       <div>
@@ -32,13 +38,20 @@
     </td>
   </tr>
   <tr>
-    <th><h3>Create an Account:</h3></th>
+    <th><h3>Create an Account</h3></th>
     <th><h3>Coming Soon...</h3></th>
   </tr>
   <tr>
     <td> 
       <div class="signup">
-        =========================
+      <form method="POST" action="/signup"> 
+        <h3>
+        <label for="username">Username: </label><input type="text" name="username"><br>
+        <label for="email">Email: </label><input type="text" name="email"><br>
+        <label for="password">Password: </label><input type="password" name="password"><br>
+        <input type="submit" value="Sign Up">
+        </h3>
+    </form>
       </div>
     </td>
         <td>
