@@ -1,1 +1,12 @@
 <h1>This is the show page for an individual instance of your model.</h1>
+
+
+<h1>User's Profile Page</h1>
+
+<h3>Here are your Mad Libs.</h3>
+
+<% @starwars.each do |s| %>
+    <h5><%=s.title%><h5>
+    <h6><%=s.created_at%> - <%=s.updated_at%></h6>
+<% end %>
+

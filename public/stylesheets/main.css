@@ -66,6 +66,26 @@
     margin-bottom: 18px;
   }
 
+  th {
+    text-align: left;
+    padding-left: 8px;
+    padding-right: 100px;
+    vertical-align: top;
+  }
+
+  td {
+    padding-left: 8px;
+    padding-right: 100px;
+    padding-bottom: 20px;
+    vertical-align: top;
+  }
+
+  /* td.right {
+    align-content: right;
+    padding-left: 8px;
+    padding-right: 8px;
+  } */
+
   .main {
     overflow: hidden;
   }
@@ -78,7 +98,7 @@
   .sidebar {
     background: #eee;
     border: 1px solid #ccc;
-    float: right;
+    float: none;
     padding: 2.08333333333%; /* 5px / 240px */
     width: 30%; /* 240px / 800px */
   }
