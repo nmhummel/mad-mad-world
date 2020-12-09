@@ -20,7 +20,7 @@ class StarwarsController < ApplicationController
     starwar.user_id = session[:user_id]
     # not a @var because we're going to redirect and lose this data anyway
     #faker
-    binding.pry
+    #binding.pry
     starwar.save 
     #@@madlibs << starwar
     redirect "/starwars/#{starwar.id}" 
