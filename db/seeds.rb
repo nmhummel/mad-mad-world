@@ -1,7 +1,9 @@
-#User.create(username: Faker::Internet.username, email: Faker::Internet.email, password: Faker::Internet.password)
+10.times do
+    User.create(username: Faker::Internet.username, email: Faker::Internet.email, password: Faker::Internet.password)
+end
 
 10.times do
-    @faker_array = {
+    Starwar.create(
         title: Faker::Movies::StarWars.quote,
         planet_1: Faker::Movies::StarWars.planet,
         specie_1: Faker::Movies::StarWars.specie,
@@ -30,5 +32,5 @@
         verb_4: Faker::Verb.base,
         vehicle_3: Faker::Movies::StarWars.vehicle,
         quote_1: Faker::Movies::StarWars.quote
-        }    
+    )   
 end

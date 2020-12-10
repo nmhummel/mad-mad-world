@@ -38,15 +38,3 @@ class ApplicationController < Sinatra::Base
   end
   
 end
-
-# everytime we make a request, a new instance of our appcontroller is instantiated
-# @variable gets reset with every call to HTTP
-# you could write all code here if you wanted to but it's not clean
-
-# don't access model from the view - use @movies instead of Movie.all in the view files
-# in the model, make @movies = Movie.all
-
-# erb has to be a string. sinatra renders things to string in the views
-
-# rack flash can go here and will trickle to the other controllers outside the class
-#     inside class there's the method calling use rack-flash

@@ -17,8 +17,9 @@ class UsersController < ApplicationController
     #redirect_if_logged_in # make method
     user = User.new(params) #instantiate a user
     # make sure user signs up with valid data
-    if params.values.any?{|value| value.blank?} || User.find_by_email(params[:email])
-      #user.email.blank? || user.password.blank? || User.find_by_email(params[:email])
+    if !user.save
+      #binding.pry
+      flash[:message] = user.errors.full_messages.join(" // ")
       redirect "/signup"
     else
       # log them in

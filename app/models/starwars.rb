@@ -34,12 +34,6 @@ class Starwar < ActiveRecord::Base
         }  
     end
     
-        # call a metthod @starwars.blank
-
-        # def initialize(arguments)
-        #     arguments.each{|k,v| self.send("#{key}=", value)}
-        # end
-
         def fill_in_the_blanks
             faker_hash.each do |key, value|  # or @starwars, since we need to see if it is empty
                 if self.send(key) == "" || self.send(key) == nil
@@ -47,12 +41,5 @@ class Starwar < ActiveRecord::Base
                 end
             end
         end
-        #     # iterate over faker hash - keys and values
-        #     # use send method
-        #     # self.send(key) - check to see if nil or empty string
-        #     # if empty or nil, self.send(key=, value)
-        #                            # call setter method and set it to value of faker hash
-        #     # save
 
-       
 end
