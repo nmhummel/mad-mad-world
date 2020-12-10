@@ -14,11 +14,10 @@ class UsersController < ApplicationController
 
   post "/signup" do
     #handles signing up the user
-    redirect_if_not_logged_in # ???
+    #redirect_if_logged_in # make method
     user = User.new(params) #instantiate a user
     # make sure user signs up with valid data
-    if 
-      params.values.all?{|value| value.blank?} || User.find_by_email(params[:email])
+    if params.values.any?{|value| value.blank?} || User.find_by_email(params[:email])
       #user.email.blank? || user.password.blank? || User.find_by_email(params[:email])
       redirect "/signup"
     else
@@ -36,7 +35,6 @@ class UsersController < ApplicationController
   end
 
   post "/login" do # process the form
-    @starwars = Starwar.all
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password]) # if user found and authenticated
       session[:user_id] = user.id

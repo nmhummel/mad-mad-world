@@ -7,9 +7,13 @@
 <%end%>
 <br><br>
 
-<h4>So you thought the Holiday Special was lame, eh? How about we write a better one? </h4>
-<p>Like any Mad Lib, you will be presented with a variety of nouns, adjectives, verbs, and more.
- What you enter does not have to specific to the Star Wars universe, but if you get stuck and need 
- help with a word or phrase, select "Fake It" next to the blank and we'll fill in something for you.</p>
+<h4>So you thought the Holiday Special was lame, eh? </h4>
+<h3>Let's see how others did in making better versions.  </h3>
+<br>
+<% @starwars.each do |story|  %>
+ <a href="/starwars/<%=story.id%>"><%= story.title %></a><br>
+     <h6>Created on: <%=story.created_at%><br>
+    Last Updated: <%=story.updated_at%></h6><br><br>
+    <% end %>
 
-<p>Ready to get started? Click <a href="/starwars/new">*HERE*</a> to fill in your blanks.
+<a href="/starwars/new">Create a new story</a> || <a href="/users">Return to your account</a> || <a href="/logout">Log out of your account</a>

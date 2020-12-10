@@ -16,14 +16,18 @@
   <body>
     <div class="wrapper">
 
-<!--
+
       <% flash.keys.each do |type| %>
         <div data-alert class="flash <%= type %> alert-box radius">
           <%= flash[type] %>
-          <a href="#" class="close">&times;</a>
         </div>
       <% end %>
--->
+<!--
+    <div class="alert alert-info">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+    </div>
+  -->
         <%= yield %>
 
       <footer class="branding">
