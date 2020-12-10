@@ -1,7 +1,9 @@
 <% if logged_in? %>
     <h1><%=current_user.username %>'s Profile Page</h1>
 <%end%>
-<br><br>
+<%if flash(:message)%>
+  <p style="color:red;"><%=flash[:message]%></p>
+<%end%> 
 
 <h3>Here are your completed Mad Libs.</h3>
 <h5>You can edit each story or delete it by clicking on the story. 

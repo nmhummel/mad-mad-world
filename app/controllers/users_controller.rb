@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   get "/users" do
     @starwars = current_user.starwars
+    #binding.pry
     erb :"/users/index"
   end
 
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
     else
       # log them in
       user.save
+      flash[:message] = "Signup successful. Please login now."
       session[:user_id] = user.id # this line of code actually logs us in
       redirect "/users"
     end
@@ -38,6 +40,7 @@ class UsersController < ApplicationController
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password]) # if user found and authenticated
       session[:user_id] = user.id
+      flash[:message] = "Log in successful."
       redirect "/users"
     else
       redirect "/login"
@@ -46,6 +49,7 @@ class UsersController < ApplicationController
 
   get "/logout" do
     session.clear
+    flash[:message] = "Logout successful."
     #session.delete(:user_id) # delete just the user_id
     redirect "/"
   end

@@ -8,7 +8,8 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, 'txhxexrxaxixnxixnxsxpxaxixn'
+    set :session_secret, ENV['SESSION_SECRET']
+    register Sinatra::Flash
   end
 
   get "/" do
@@ -31,6 +32,7 @@ class ApplicationController < Sinatra::Base
 
   def redirect_if_not_logged_in
     if !logged_in?
+      flash[:message] = "Wrong username or password. Please try again."
       redirect "/login" #leaved the method if not logged in
      end
   end

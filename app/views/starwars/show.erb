@@ -43,11 +43,11 @@ He smiled and returned to his <u><%=@starwar.vehicle_3%></u> to go.<br>
 But I heard him exclaim, as he drove out of sight,<br>
 "A Merry Christmas, you have." and "<u><%=@starwar.quote_1%></u>"</p>
 
-<!-- This story has been saved on your user page. Link It A tags submit get requests. delete needs a button to submit-->
+<!--<a> tags submit get requests. delete needs a button to submit-->
 
 <% if @starwar.user_id == session[:user_id] %>
-    <a href="/starwars/<%=@starwar.id %>/edit">Edit Story</a><br><br>
-    <form method="POST" action="/starwars/<u><%=@starwar.id%></u>">
+    <a href="/starwars/<%=@starwar.id%>/edit">Edit Story</a><br><br>
+    <form method="POST" action="/starwars/<%=@starwar.id%>">
         <input type="hidden" name="_method" value ="DELETE">
         <input type="submit" value="Delete <%=@starwar.title%>">
     </form>
