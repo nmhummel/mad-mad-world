@@ -1,13 +1,13 @@
 <h1>A Better Star Wars Holiday Special</h1>
 <% if logged_in? %>
-    <h5>Logged in User ID: <%=current_user.username %></h5>
+    <h4>Logged in User ID: <%=current_user.username %></h4>
 <%end%>
 <br><br>
 
 <h3>Let's see how others did in making better versions.  </h3>
 <br>
 
-<% @starwars.each do |story|  %> 
+<% @starwars.order('updated_at ASC').each do |story|  %> 
  <a href="/starwars/<%=story.id%>"><%= story.title %></a><br>
  <h5>Created by: <%= story.user.username %>
      <h6>Created on: <%=story.created_at%><br>

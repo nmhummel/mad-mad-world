@@ -2,17 +2,18 @@
     <h1><%=current_user.username %>'s Profile Page</h1>
 <%end%>
 
-<h3>Here are your completed Mad Libs.</h3>
-<h5>You can edit each story or delete it by clicking on the story. 
-Both options will be at the bottom of each page. </h5>
+<h2>Here are your completed Mad Libs.</h2>
+<h4>You can edit a story or delete it by clicking on its title. 
+Both options will be at the bottom the page. </h4>
 <br>
-
+<br>
 <% @starwars.each do |s| %>
     <h5><a href="/starwars/<%=s.id%>"><%=s.title%></a><h5>
     <h6>Created on: <%=s.created_at%><br>
     Last Updated: <%=s.updated_at%></h6><br>
 <% end %>
 
-<a href="/starwars/new">Create a new story!</a> || <a href="/starwars">See ALL Star Wars stories</a> || <a href="/logout">Log out of your account</a>
+<br>
+<a href="/starwars/new">Create a new story</a> || <a href="/starwars">See ALL Star Wars stories</a> || <a href="/logout">Log out of your account</a>
 
 
