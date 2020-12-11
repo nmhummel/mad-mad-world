@@ -14,6 +14,11 @@ Both options will be at the bottom the page. </h4>
 <% end %>
 
 <br>
-<a href="/starwars/new">Create a new story</a> || <a href="/starwars">See ALL Star Wars stories</a> || <a href="/logout">Log out of your account</a>
+<a href="/starwars/new">Create a NEW Star Wars story</a> || <a href="/starwars">See ALL Star Wars stories</a><br><br>
+<a href="/logout">Log out of your account</a><br><br>
+<form action="/users/<%= current_user.id %>" method="post">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Your Account">
+</form> 
 
 

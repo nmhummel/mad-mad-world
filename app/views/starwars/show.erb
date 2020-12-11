@@ -44,7 +44,7 @@ He smiled and returned to his <u><%=@starwar.vehicle_3%></u> to go.<br>
 But I heard him exclaim, as he drove out of sight,<br>
 "A Merry Christmas, you have." and "<u><%=@starwar.quote_1%></u>"</p>
 
-<!--<a> tags submit get requests. delete needs a button to submit-->
+<br>
 
 <% if @starwar.user_id == session[:user_id] %>
     <a href="/starwars/<%=@starwar.id%>/edit">Edit Story</a><br><br>

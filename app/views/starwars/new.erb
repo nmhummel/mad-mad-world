@@ -1,42 +1,46 @@
-<!-- if user is logged in proceed. if not redirect to log/in sign up form-->
-
-<h1>A Better Star Wars Holiday Special</h1>
-<h4>So you thought the Holiday Special was lame, eh? How about we write a better one? </h4>
+<h1>A Better Star Wars Holiday Special </h1>
+<img src="../images/star-wars-holiday-special.jpg" width="400px" align="center" style="margin: 0px 10px 0px 0px;"><br><br>
+<h4>So you thought the Holiday Special was lame, eh? How about we write a better one?</h4><br>
 <p>Like any Mad Lib, enter a variety of words as prompted below. What you enter does not have 
  to specific to the Star Wars universe, but if you get stuck and need 
  help with a word or phrase, leave it blank and we'll fill it in for you.</p>                                  
-
-<form method="POST" action="/starwars">
-<h3>Give this story a name or title to store it in your profile.</h3><br>
-    Title: <input type="text" name="title"><br><br>
-    Planet: <input type="text" name="planet_1"><br><br>
-    Species: <input type="text" name="specie_1"><br><br>
-    Verb, Past Tense: <input type="text" name="verb_1"><br><br>
-    Noun: <input type="text" name="noun_1"><br><br>
-    Species: <input type="text" name="specie_2"><br><br>
-    Type of Vehicle: <input type="text" name="vehicle_1"><br><br>   
-    Verb, Past Tense: <input type="text" name="verb_2"><br><br>
-    Noun: <input type="text" name="noun_2"><br><br>
-    Verb, Past Tense: <input type="text" name="verb_3"><br><br>
-    Adjective: <input type="text" name="adjective_1"><br><br>
-    Type of Vehicle: <input type="text" name="vehicle_2"><br><br> 
-    Number: <input type="text" name="number_1"><br><br>
-    Species: <input type="text"  name="specie_3"><br><br>
-    Animal, Plural: <input type="text" name="animal_1"><br><br>
-    Person's Name: <input type="text" name="name_1"><br><br>
-    Person's Name: <input type="text" name="name_2"> <br><br>
-    Character: <input type="text" name="character_1"><br><br>
-    Character: <input type="text"  name="character_2"><br><br>
-    Character: <input type="text" name="character_3"><br><br>
-    Noun: <input type="text" name="noun_3"><br><br>
-    Adjective: <input type="text" name="adjective_2"><br><br>
-    Adjective: <input type="text" name="adjective_3"><br><br>
-    Noun: <input type="text" name="noun_4"><br><br>
-    Adjective: <input type="text" name="adjective_4"><br><br>
-    Verb, Present Tense: <input type="text" name="verb_4"><br><br>
-    Type of Vehicle: <input type="text" name="vehicle_3"><br><br>
-    Quote: <input type="text" name="quote_1"><br><br>
-    <input type="submit" value="Go Mad!">
-</form>
+<table>
+  <tr>
+    <td>
+        <form method="POST" action="/starwars">
+        <h3>Give this story a name or title to store it in your profile.</h3><br>
+            Title: <input type="text" name="title"><br><br>
+            Planet: <input type="text" name="planet_1"><br><br>
+            Species: <input type="text" name="specie_1"><br><br>
+            Verb, Past Tense: <input type="text" name="verb_1"><br><br>
+            Noun: <input type="text" name="noun_1"><br><br>
+            Species: <input type="text" name="specie_2"><br><br>
+            Type of Vehicle: <input type="text" name="vehicle_1"><br><br>   
+            Verb, Past Tense: <input type="text" name="verb_2"><br><br>
+            Noun: <input type="text" name="noun_2"><br><br>
+            Verb, Past Tense: <input type="text" name="verb_3"><br><br>
+            Adjective: <input type="text" name="adjective_1"><br><br>
+            Type of Vehicle: <input type="text" name="vehicle_2"><br><br> 
+            Number: <input type="text" name="number_1"><br><br>
+            Species: <input type="text"  name="specie_3"><br><br>
+            Animal, Plural: <input type="text" name="animal_1"><br><br>
+            Person's Name: <input type="text" name="name_1"><br><br>
+            Person's Name: <input type="text" name="name_2"> <br><br>
+            Character: <input type="text" name="character_1"><br><br>
+            Character: <input type="text"  name="character_2"><br><br>
+            Character: <input type="text" name="character_3"><br><br>
+            Noun: <input type="text" name="noun_3"><br><br>
+            Adjective: <input type="text" name="adjective_2"><br><br>
+            Adjective: <input type="text" name="adjective_3"><br><br>
+            Noun: <input type="text" name="noun_4"><br><br>
+            Adjective: <input type="text" name="adjective_4"><br><br>
+            Verb, Present Tense: <input type="text" name="verb_4"><br><br>
+            Type of Vehicle: <input type="text" name="vehicle_3"><br><br>
+            Quote: <input type="text" name="quote_1"><br><br>
+            <input type="submit" value="Go Mad!">
+        </form>
+    </td>
+  </tr>
+</table>
 <br><br>
 <a href="/users">Return to your profile page</a> || <a href="/starwars">See ALL Star Wars stories</a> || <a href="/logout">Log out of your account</a>

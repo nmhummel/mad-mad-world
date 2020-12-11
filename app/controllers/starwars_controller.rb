@@ -1,52 +1,41 @@
 class StarwarsController < ApplicationController
 
-  # GET: /stories - get or see all starwars stories
-  get "/starwars" do # request info to see and display it
+  get "/starwars" do 
     redirect_if_not_logged_in
     @starwars = Starwar.all
-    #binding.pry
     erb :"/starwars/index" 
   end
   
-  # GET: /starwars/new - get the form to create a new starwar (does not create)
   get "/starwars/new" do 
     redirect_if_not_logged_in
     erb :"/starwars/new" 
   end
 
-  # POST: /starwars - form is submitted here - CREATES new starwar from form data
   post "/starwars" do 
-    redirect_if_not_logged_in
-    #binding.pry
     starwar = Starwar.new(params)
     starwar.fill_in_the_blanks
-    starwar.user_id = session[:user_id] # not a @var because we're going to redirect and lose this data anyway
+    starwar.user_id = session[:user_id] 
     starwar.save 
     flash[:message] = "Story saved!"
-    redirect "/starwars/#{starwar.id}" # makes a new GET request - sending info to server to do something with it
+    redirect "/starwars/#{starwar.id}" 
   end
   
-  # GET: /starwars/5 - get one specific starwar
   get "/starwars/:id" do 
-    @starwar = Starwar.find(params[:id]) #or "id"
-    #@starwar.update(title: params["starwar"]["title"])
+    redirect_if_not_logged_in
+    @starwar = Starwar.find(params[:id]) 
     erb :"/starwars/show"
   end
 
-  # GET: /starwars/5/edit - get the form to edit a specific starwar...
   get "/starwars/:id/edit" do 
+    redirect_if_not_logged_in
     @starwar = Starwar.find(params["id"]) 
-    # the above line of code should be in every route that has :id
     redirect_if_not_authorized 
     erb :"/starwars/edit"
   end
 
-  # PATCH: /starwars/5 - ...and update that specific starwar using patch/put
-  patch "/starwars/:id" do # put/patch
-    redirect_if_not_logged_in
+  patch "/starwars/:id" do 
     @starwar = Starwar.find(params["id"])
-    redirect_if_not_authorized #shares that info at @
-    #binding.pry
+    redirect_if_not_authorized 
     @starwar.update(params["starwars"])
     @starwar.fill_in_the_blanks
     @starwar.save
@@ -54,13 +43,12 @@ class StarwarsController < ApplicationController
     redirect "/starwars/#{@starwar.id}"
   end
 
-  # DELETE: /starwars/5/delete - destroy a starwar from the database
-  delete "/starwars/:id" do 
+  delete "/starwars/:id" do
+    redirect_if_not_logged_in 
     @starwar = Starwar.find(params["id"])
     redirect_if_not_authorized
     @starwar.destroy
     flash[:message] = "Story deleted."
-    #show success message
     redirect "/users"
   end
 
@@ -68,7 +56,7 @@ class StarwarsController < ApplicationController
 
   def redirect_if_not_authorized
     if @starwar.user_id != session[:user_id]
-      flash[:message] = "Error. Please try again."
+      flash[:message] = "Sorry-- you can't do that."
       redirect "/starwars"  
     end
   end

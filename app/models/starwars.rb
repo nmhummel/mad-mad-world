@@ -35,7 +35,7 @@ class Starwar < ActiveRecord::Base
     end
 
     def fill_in_the_blanks
-        faker_hash.each do |key, value|  # or @starwars, since we need to see if it is empty
+        faker_hash.each do |key, value| 
             if self.send(key) == "" || self.send(key) == nil
                 self.send("#{key}=",value)
             end

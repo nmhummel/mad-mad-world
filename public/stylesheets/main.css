@@ -11,20 +11,8 @@
     width: 100%;
   }
 
-  
-  /* table styling 
-  input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid red;
-    border-radius: 4px;
-  }
 
-*/
-
-  /* --- Welcome Page Styles --- */
+  /* --- Index Page Styles --- */
   body {
     background-image: url("../images/madlibs-reactions.png");
     background-repeat: repeat;
@@ -36,6 +24,9 @@
   }
 
   a {
+    color: #333;
+    font-family: Sans-Serif;
+    line-height: 18px;
     font-size: 18px;
   }
   .wrapper {
@@ -55,10 +46,8 @@
   }
 
   h2 {
-    /*border-bottom: 2px solid #ccc;*/
     font-size: 24px;
     line-height: 36px;
-    /*margin-bottom: 16px;*/
   }
 
   h3 {

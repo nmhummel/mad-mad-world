@@ -13,28 +13,26 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :index # this renders the file
+    erb :index 
   end
 
-  helpers do # allows our views to access the methods - only shareable in views
+  helpers do 
 
     def logged_in?
       !!current_user
     end
 
-    def current_user # memoization
-      @current_user ||= User.find(session[:user_id]) if session[:user_id] # if they're not even logged in don't bother
+    def current_user 
+      @current_user ||= User.find(session[:user_id]) if session[:user_id] 
     end
 
-  end
+    def redirect_if_not_logged_in
+      if !logged_in?
+        flash[:message] = "Please log in to continue."
+        redirect "/"
+      end
+    end
 
-  private
-
-  def redirect_if_not_logged_in
-    if !logged_in?
-      flash[:message] = "Wrong username or password. Please try again."
-      redirect "/login" #leaved the method if not logged in
-     end
   end
   
 end

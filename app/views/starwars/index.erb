@@ -2,16 +2,18 @@
 <% if logged_in? %>
     <h4>Logged in User ID: <%=current_user.username %></h4>
 <%end%>
-<br><br>
+<br>
+<img src="../images/star-wars-holiday-special.jpg" width="400px" align="center" style="margin: 0px 10px 0px 0px;">
+<br>
 
 <h3>Let's see how others did in making better versions.  </h3>
 <br>
 
 <% @starwars.order('updated_at ASC').each do |story|  %> 
  <a href="/starwars/<%=story.id%>"><%= story.title %></a><br>
- <h5>Created by: <%= story.user.username %>
-     <h6>Created on: <%=story.created_at%><br>
-    Last Updated: <%=story.updated_at%></h6><br><br>
+ Created by: <%= story.user.try(:username) %>
+    <h6>Created on: <%=story.created_at.strftime("Created on %m/%d/%Y at %I:%M%p")%><br>
+    Last Updated: <%=story.updated_at.strftime("Created on %m/%d/%Y at %I:%M%p")%></h6><br><br>
     <% end %>
 
 <a href="/starwars/new">Create a new story</a> || <a href="/users">Return to your account</a> || <a href="/logout">Log out of your account</a>
