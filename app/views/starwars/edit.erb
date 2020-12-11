@@ -4,8 +4,7 @@
 
 <form method="POST" action="/starwars/<%=@starwar.id%>">
     <input type="hidden" name="_method" value="PATCH">
-<h4>Here's a chance to outdo your previous effort. Don't forget that you can always select "Fake It!"
-and we'll provide a brilliant answer on your behalf.</h4><br>
+<h4>Here's a chance to outdo your previous effort. REMEMBER: you can always leave the space blank and we'll provide a brilliant answer on your behalf.</h4><br>
     Title: <input type="text" name="starwars[title]" value="<%=@starwar.title%>"><br><br>
     Planet: <input type="text" name="starwars[planet_1]" value="<%=@starwar.planet_1%>"><br><br>
     Species: <input type="text" name="starwars[specie_1]" value="<%=@starwar.specie_1%>"><br><br>
@@ -36,7 +35,3 @@ and we'll provide a brilliant answer on your behalf.</h4><br>
     Quote: <input type="text" name="starwars[quote_1]" value="<%=@starwar.quote_1%>"><br><br>
     <input type="submit" value="Recreate the Madness!">
 </form>
-
-
-
-

@@ -1,17 +1,15 @@
-<!-- don't delete page. we'll need this as landing page for Star Wars once we expand -->
-
-
 <h1>A Better Star Wars Holiday Special</h1>
 <% if logged_in? %>
     <h5>Logged in User ID: <%=current_user.username %></h5>
 <%end%>
 <br><br>
 
-<h4>So you thought the Holiday Special was lame, eh? </h4>
 <h3>Let's see how others did in making better versions.  </h3>
 <br>
-<% @starwars.each do |story|  %>
+
+<% @starwars.each do |story|  %> 
  <a href="/starwars/<%=story.id%>"><%= story.title %></a><br>
+ <h5>Created by: <%= story.user.username %>
      <h6>Created on: <%=story.created_at%><br>
     Last Updated: <%=story.updated_at%></h6><br><br>
     <% end %>

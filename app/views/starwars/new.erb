@@ -7,9 +7,8 @@
  help with a word or phrase, leave it blank and we'll fill it in for you.</p>                                  
 
 <form method="POST" action="/starwars">
-<h3>Give this story a name or title to store it in your profile.</h3>
-<input type="text" name="title"><br><br><br>
-<h3>Now, fill in the blanks with the requested element. Or select "Fake It!"</h3>
+<h3>Give this story a name or title to store it in your profile.</h3><br>
+    Title: <input type="text" name="title"><br><br>
     Planet: <input type="text" name="planet_1"><br><br>
     Species: <input type="text" name="specie_1"><br><br>
     Verb, Past Tense: <input type="text" name="verb_1"><br><br>
@@ -39,11 +38,5 @@
     Quote: <input type="text" name="quote_1"><br><br>
     <input type="submit" value="Go Mad!">
 </form>
-
 <br><br>
-<input type="text" list="cars" />
-<datalist id="cars">
-  <option>Fake It!</option>
-</datalist>
-
-
+<a href="/users">Return to your profile page</a> || <a href="/starwars">See ALL Star Wars stories</a> || <a href="/logout">Log out of your account</a>

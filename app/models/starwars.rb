@@ -33,13 +33,13 @@ class Starwar < ActiveRecord::Base
             quote_1: Faker::Movies::StarWars.quote
         }  
     end
-    
-        def fill_in_the_blanks
-            faker_hash.each do |key, value|  # or @starwars, since we need to see if it is empty
-                if self.send(key) == "" || self.send(key) == nil
-                    self.send("#{key}=",value)
-                end
+
+    def fill_in_the_blanks
+        faker_hash.each do |key, value|  # or @starwars, since we need to see if it is empty
+            if self.send(key) == "" || self.send(key) == nil
+                self.send("#{key}=",value)
             end
         end
+    end
 
 end

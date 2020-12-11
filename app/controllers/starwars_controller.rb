@@ -4,6 +4,7 @@ class StarwarsController < ApplicationController
   get "/starwars" do # request info to see and display it
     redirect_if_not_logged_in
     @starwars = Starwar.all
+    #binding.pry
     erb :"/starwars/index" 
   end
   
@@ -55,9 +56,9 @@ class StarwarsController < ApplicationController
 
   # DELETE: /starwars/5/delete - destroy a starwar from the database
   delete "/starwars/:id" do 
-    starwar = Starwar.find(params["id"])
+    @starwar = Starwar.find(params["id"])
     redirect_if_not_authorized
-    starwar.destroy
+    @starwar.destroy
     flash[:message] = "Story deleted."
     #show success message
     redirect "/users"
