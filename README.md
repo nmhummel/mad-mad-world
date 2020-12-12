@@ -1,4 +1,6 @@
 MadMadWorld
+Blog Post: TBD
+Video Walk-thru: https://youtu.be/Lib6SwjtsPo
 
 Description:
 MadLibs is a fun activity for all ages. It features two elements-- a pre-written story with blanks to fill in, and the list of words that need to go in the blanks (nouns, animals, verbs, etc.). The "writer" has control of the list of words and gets suggestions from others, then 
