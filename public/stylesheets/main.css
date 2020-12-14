@@ -24,10 +24,10 @@
   }
 
   a {
-    color: #333;
+    color: rgb(2, 54, 11);
     font-family: Sans-Serif;
     line-height: 18px;
-    font-size: 18px;
+
   }
   .wrapper {
     background-color: rgb(242, 246, 234); 
@@ -38,6 +38,45 @@
     max-width: 960px;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
+  }
+
+  .whoopsie {
+    border: 5px solid darkgreen;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .mad-guy {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+  }
+
+  .starwars {
+    width: 400px;
+  }
+
+  table.buttons {
+    display: table;
+    width: 500px;
+    height: 80px;
+    padding: 1px 1px 1px 1px;
+  }
+
+  table.login {
+    display: table;
+    text-align: left;
+    vertical-align: top;
+    width: 750px;
+    padding-left: 8px;
+    padding-right: 100px;
+  }
+
+  .login td {
+    vertical-align: top;
   }
 
   h1 {
@@ -57,20 +96,6 @@
 
   p {
     margin-bottom: 18px;
-  }
-
-  th {
-    text-align: left;
-    padding-left: 8px;
-    padding-right: 100px;
-    vertical-align: top;
-  }
-
-  td {
-    padding-left: 8px;
-    padding-right: 100px;
-    padding-bottom: 20px;
-    vertical-align: top;
   }
 
   .main {

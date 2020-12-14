@@ -3,7 +3,7 @@
     <h4>Logged in User ID: <%=current_user.username %></h4>
 <%end%>
 <br>
-<img src="../images/star-wars-holiday-special.jpg" width="400px" align="center" style="margin: 0px 10px 0px 0px;">
+<img src="../images/star-wars-holiday-special.jpg" class="starwars">
 <br>
 
 <h3>Let's see how others did in making better versions.  </h3>
@@ -11,9 +11,38 @@
 
 <% @starwars.order('updated_at ASC').each do |story|  %> 
  <a href="/starwars/<%=story.id%>"><%= story.title %></a><br>
- Created by: <%= story.user.try(:username) %>
+    <h5>Created by: <%= story.user.try(:username) %></h5>
     <h6>Created on: <%=story.created_at.strftime("Created on %m/%d/%Y at %I:%M%p")%><br>
     Last Updated: <%=story.updated_at.strftime("Created on %m/%d/%Y at %I:%M%p")%></h6><br><br>
-    <% end %>
+<% end %>
 
-<a href="/starwars/new">Create a new story</a> || <a href="/users">Return to your account</a> || <a href="/logout">Log out of your account</a>
+<table class="buttons">
+  <tr>
+    <td>
+      <form action="/starwars/new">
+        <input id="hidden" type="hidden" name="_method" value="delete">       
+        <input type="submit" value="Create NEW Star Wars story">
+      </form>
+    </td>
+    <td>
+      <form action="/logout">
+        <input id="hidden" type="hidden" name="_method" value="delete">       
+        <input type="submit" value="Log Out of Your Account">
+      </form> 
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <form action="/users">
+        <input id="hidden" type="hidden" name="_method" value="delete">       
+        <input type="submit" value="See YOUR Star Wars story">
+      </form>
+    </td>
+    <td>
+      <form action="/users/<%= current_user.id %>" method="post">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete Your Account and Stories">
+      </form> 
+    </td>
+  </tr>
+</table>

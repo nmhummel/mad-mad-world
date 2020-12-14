@@ -14,10 +14,10 @@ In your terminal, fork and clone the GitHub files in the directory of your choos
 Once you are in the project's main directory, enter 'bundle install' to get the tools you'll need to run this application properly. Once that is complete, enter 'shotgun' into the 
 terminal, click the http link provided, and a new internet browser window should open.
 
-**Copyright**
+**Copyright:**
 Visit https://www.madlibs.com/ for more info on the original creation.
 
-**License**
+**License:**
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
 Details available here: https://creativecommons.org/licenses/by-nc-sa/4.0/
 

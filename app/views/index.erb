@@ -14,7 +14,7 @@
     </div>
 <br><hr><br>
 </div>
-<table>
+<table class="login">
   <tr>
     <th><h3>Log In to Your Account</h4></th>
     <th><h3>Current Madlib(s):</h3></th>
@@ -22,12 +22,10 @@
   <tr>
     <td>
         <form action="/login" method="POST">
-          <h2>
           <label for="username">Username: </label><input id="username" type="text" name="username"><br>
-          <label for="password">Password: </label><input id="password" type="password" name="password"><br>
+          <label for="password">Password: </label><input id="password" type="password" name="password"><br><br>
           <input type="submit" value="Log In">
-        </h2>
-      </form>
+      </form><br>
     </td>
     <td>
       <div>
@@ -45,23 +43,21 @@
     <td> 
       <div class="signup">
       <form method="POST" action="/signup"> 
-        <h3>
         <label for="username">Username: </label><input type="text" name="username"><br>
         <label for="email">Email: </label><input type="text" name="email"><br>
-        <label for="password">Password: </label><input type="password" name="password"><br>
+        <label for="password">Password: </label><input type="password" name="password"><br><br>
         <input type="submit" value="Sign Up">
-        </h3>
-    </form>
+    </form><br>
       </div>
     </td>
         <td>
-      <div>
-        <ul>
-          <li>Harry Potter and the Missing Words</li>
-          <li>Coders Guide to the Galaxy</li>
-          <li>Doctor Who-ville</li>
-        </ul>
-      </div>  
+        <div>
+          <ul>
+            <li>Harry Potter and the Missing Words</li>
+            <li>Coders Guide to the Galaxy</li>
+            <li>Doctor Who-ville</li>
+          </ul>
+        </div>  
     </td>
   </tr>
 </table>

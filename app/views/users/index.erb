@@ -1,24 +1,51 @@
+<img src="../images/mad-libs-guy.png" class="mad-guy" align="right">
 <% if logged_in? %>
     <h1><%=current_user.username %>'s Profile Page</h1>
+    <hr>
 <%end%>
 
 <h2>Here are your completed Mad Libs.</h2>
-<h4>You can edit a story or delete it by clicking on its title. 
+<h4>You can edit a story or delete it by clicking on its title.<br>
 Both options will be at the bottom the page. </h4>
 <br>
 <br>
 <% @starwars.each do |s| %>
-    <h5><a href="/starwars/<%=s.id%>"><%=s.title%></a><h5>
-    <h6>Created on: <%=s.created_at%><br>
-    Last Updated: <%=s.updated_at%></h6><br>
+    <h4><a href="/starwars/<%=s.id%>"><%=s.title%></a></h4>
+    <h6>Created on: <%=s.created_at.strftime("Created on %m/%d/%Y at %I:%M%p")%><br>
+    Last Updated: <%=s.updated_at.strftime("Created on %m/%d/%Y at %I:%M%p")%></h6><br>
 <% end %>
 
 <br>
-<a href="/starwars/new">Create a NEW Star Wars story</a> || <a href="/starwars">See ALL Star Wars stories</a><br><br>
-<a href="/logout">Log out of your account</a><br><br>
-<form action="/users/<%= current_user.id %>" method="post">
-  <input id="hidden" type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete Your Account">
-</form> 
+
+<table class="buttons">
+  <tr>
+    <td>
+      <form action="/starwars/new">
+        <input id="hidden" type="hidden" name="_method" value="delete">       
+        <input type="submit" value="Create NEW Star Wars story">
+      </form>
+    </td>
+    <td>
+      <form action="/logout">
+        <input id="hidden" type="hidden" name="_method" value="delete">       
+        <input type="submit" value="Log Out of Your Account">
+      </form> 
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <form action="/starwars">
+        <input id="hidden" type="hidden" name="_method" value="delete">       
+        <input type="submit" value="See ALL Star Wars story">
+      </form>
+    </td>
+    <td>
+      <form action="/users/<%= current_user.id %>" method="post">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete Your Account and Stories">
+      </form>
+    </td>
+  </tr>
+</table>
 
 
