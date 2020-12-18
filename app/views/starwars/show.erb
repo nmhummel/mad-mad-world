@@ -3,7 +3,6 @@
 <h2>Title: "<u><%=@starwar.title%></u>"</h2>
 <h3><i>Story #<%=@starwar.id%>, Created by: <%= @starwar.user.username %></i></h3>
 
-
 <p>'Twas the night before Christmas, when all through <u><%=@starwar.planet_1%></u>,<br>
 Not a creature was stirring, not even a <u><%=@starwar.specie_1%></u>.<br>
 The lightsabers were <u><%=@starwar.verb_1%></u> by the <u><%=@starwar.noun_1%></u> with care,<br>
@@ -47,10 +46,13 @@ But I heard him exclaim, as he drove out of sight,<br>
 <br>
 
 <% if @starwar.user_id == session[:user_id] %>
-    <a href="/starwars/<%=@starwar.id%>/edit">Edit Story</a><br><br>
+    <form method="GET" action="/starwars/<%=@starwar.id%>/edit">     
+        <input type="submit" value="EDIT '<%= @starwar.title%>'">
+    </form> 
+<br>
     <form method="POST" action="/starwars/<%=@starwar.id%>">
         <input type="hidden" name="_method" value ="DELETE">
-        <input type="submit" value="Delete <%=@starwar.title%>">
+        <input type="submit" value="DELETE '<%= @starwar.title%>'">
     </form>
 <% end %>
 <br><br><a href="/users">Your Profile Page</a> || <a href="/starwars">See ALL Star Wars stories</a> || <a href="/logout">Log out of your account</a>

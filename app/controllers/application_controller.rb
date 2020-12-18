@@ -16,9 +16,13 @@ class ApplicationController < Sinatra::Base
     erb :index 
   end
   
+  get "/whoopsie" do
+    erb :whoopsie
+  end
+
   not_found do
     status 404
-    erb :whoopsie
+    redirect "/whoopsie"
   end
 
   helpers do 
@@ -38,7 +42,6 @@ class ApplicationController < Sinatra::Base
       end
     end
     
-
   end
   
 end

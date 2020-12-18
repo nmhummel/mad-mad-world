@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       flash[:message] = user.errors.full_messages.join(" // ")
       redirect "/signup"
     else
-      user.save
+      user.save # comment out - double saving
       flash[:message] = "Signup successful. Please login now."
       session[:user_id] = user.id 
       redirect "/users"
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   get "/login" do 
     redirect_if_not_logged_in
-    @starwars = Starwar.all
+    @starwars = Starwar.all # get rid of!
     erb :"/users/login"
   end
 
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
     redirect "/"
   end
 
-  delete '/users/:id' do #delete action
+  delete '/users/:id' do
     redirect_if_not_logged_in
     @user = User.find_by_id(params[:id])
     if @user == current_user
@@ -62,4 +62,3 @@ class UsersController < ApplicationController
   end 
 
 end
-

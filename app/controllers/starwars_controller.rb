@@ -22,7 +22,8 @@ class StarwarsController < ApplicationController
   
   get "/starwars/:id" do 
     redirect_if_not_logged_in
-    @starwar = Starwar.find(params[:id]) 
+    #binding.pry
+    ensure_path_is_good 
     erb :"/starwars/show"
   end
 
@@ -36,7 +37,7 @@ class StarwarsController < ApplicationController
   patch "/starwars/:id" do 
     @starwar = Starwar.find(params["id"])
     redirect_if_not_authorized 
-    @starwar.update(params["starwars"])
+    @starwar.update(params["starwars"]) # fill params with fill_in_the_banks
     @starwar.fill_in_the_blanks
     @starwar.save
     flash[:message] = "Edit successful."
@@ -58,6 +59,13 @@ class StarwarsController < ApplicationController
     if @starwar.user_id != session[:user_id]
       flash[:message] = "Sorry-- you can't do that."
       redirect "/starwars"  
+    end
+  end
+
+  def ensure_path_is_good
+    @starwar = Starwar.find_by_id(params[:id]) 
+    if !@starwar
+      redirect "/whoopsie"
     end
   end
 
