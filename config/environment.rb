@@ -11,5 +11,7 @@ require 'dotenv/load'
 
 set :database_file, "./database.yml"
 
+Dotenv.load if ENV['SINATRA_ENV'] == "development"
+
 require './app/controllers/application_controller'
 require_all 'app'
